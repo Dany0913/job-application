@@ -4,36 +4,7 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock, faUser } from '@fortawesome/fontawesome-free-solid';
 
-class FormRegister extends Component {
-  constructor() {
-    super();
-
-    this.state = {};
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(evt) {
-    this.setState({
-      [evt.target.id]: evt.target.value,
-    });
-  }
-
-  handleSubmit(evt) {
-    evt.preventDefault();
-    this.props.handleSave(this.state);
-  }
-
-  validateForm() {
-    const { name, email, password } = this.state;
-
-    return (email && email.length > 0) &&
-      (password && password.length > 0) &&
-      (name && name.length > 0);
-  }
-
-  render() {
+const FormRegister = () => {
     return (
       <form onSubmit={this.handleSubmit}>
         <div className="form-group">
