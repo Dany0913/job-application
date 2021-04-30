@@ -2,6 +2,7 @@
 import React, { useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
 import jobs from "../../assets/data/jobs.json";
+import { getAllJobs } from "../../services/jobs.service";
 
 const RecentJobs = () => {
   return (
