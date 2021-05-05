@@ -5,6 +5,9 @@ import jobs from "../../assets/data/jobs.json";
 import { getAllJobs } from "../../services/jobs.service";
 
 const RecentJobs = () => {
+  React.useEffect(() => {
+    getAllJobs();
+  }, []);
   return (
     <section>
       <div className="container">
