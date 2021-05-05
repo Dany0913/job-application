@@ -2,6 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Navigation = () => {
+  const logUser = localStorage.getItem("LOCAL_JOB_APP_USER");
+  const user = logUser ? JSON.parse(logUser) : null;
+  console.log(user);
+  const handleLogOut = () => {
+    return localStorage.clear();
+  };
   return (
     <nav className="navbar">
       <div className="container">
@@ -19,10 +25,26 @@ const Navigation = () => {
           </div>
         </div>
         <div className="pull-right user-login">
-          <Link to="/login" className="btn btn-sm btn-primary">
-            login
-          </Link>
-          or <Link to="/register">register</Link>
+          {user ? (
+            <>
+              {" "}
+              <Link to="/login" className="btn btn-sm btn-primary">
+                {user.name}
+              </Link>
+              or{" "}
+              <button className="btn" onClick={handleLogOut}>
+                Log out
+              </button>
+            </>
+          ) : (
+            <>
+              {" "}
+              <Link to="/login" className="btn btn-sm btn-primary">
+                login
+              </Link>
+              or <Link to="/register">register</Link>
+            </>
+          )}
         </div>
         <ul className="nav-menu">
           <li>

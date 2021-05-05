@@ -28,7 +28,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "db:fake": "json-server --watch db.json --routes routes.json --port 3001"
+    "db:fake": "json-server --watch db.json --routes routes.json --port 3001",
+    "dev": "run-p -l start db:fake"
   },
   "eslintConfig": {
     "extends": [
@@ -49,6 +50,7 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^5.0.0"
+    "node-sass": "^5.0.0",
+    "prettier": "2.2.1"
   }
 }
