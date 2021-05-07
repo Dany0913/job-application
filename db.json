@@ -52,7 +52,14 @@
         "Knowledge of user interface design."
       ],
       "ago": "34 min ago",
-      "className": "label-success"
+      "className": "label-success",
+      "candidates": [
+        {
+          "name": "David Ramírez",
+          "email": "david.ramirez17@gmail.com",
+          "role": "Candidate"
+        }
+      ]
     },
     {
       "id": "1030",
@@ -88,7 +95,15 @@
         "Knowledge of user interface design."
       ],
       "ago": "8 hours ago",
-      "className": "label-warning"
+      "className": "label-warning",
+      "candidates": [
+        {
+          "name": "David Ramírez",
+          "email": "david.ramirez17@gmail.com",
+          "role": "Candidate",
+          "msj": "Aplicando al 1030"
+        }
+      ]
     },
     {
       "id": "1040",

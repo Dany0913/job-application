@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLock } from "@fortawesome/fontawesome-free-solid";
 import { loginAccount } from "../../../services/auth.service";
 
 const Login = () => {
-  React.useEffect(() => {
+  useEffect(() => {
     loginAccount("dany0913@hotmail.com");
   }, []);
   return (

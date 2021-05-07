@@ -1,24 +1,6 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
-import { getSingleJob } from "../../../services/jobs.service";
 
-const Header = () => {
-  const { id } = useParams();
-  let [job, setJob] = useState({ image: "" });
-  console.log("Estamos en FORM", job);
-
-  const getJob = async () => {
-    const selectedJob = await getSingleJob(id);
-    console.log(selectedJob);
-    setJob(selectedJob);
-  };
-
-  useEffect(() => {
-    getJob();
-  }, [id]);
-
-  // const handleApplyNow = () => {};
+const Header = (job) => {
   return (
     <header
       className="page-header bg-img size-lg"
@@ -34,14 +16,14 @@ const Header = () => {
         <hr />
         <a className="item-block item-block-flat" href="job-detail.html">
           <header>
-            <img src={job.image} alt={job.company} />
+            <img src={job.job.image} alt={job.job.company} />
             <div className="hgroup">
-              <h4>{job.title}</h4>
-              <h5>{job.company}</h5>
+              <h4>{job.job.title}</h4>
+              <h5>{job.job.company}</h5>
             </div>
             <div className="header-meta">
-              <span className="location">{job.location}</span>
-              <time>{job.ago}</time>
+              <span className="location">{job.job.location}</span>
+              <time>{job.job.ago}</time>
             </div>
           </header>
         </a>
