@@ -4,7 +4,9 @@ const loginAccount = async (email) => {
   try {
     const resp = await fetch(`${API_URL_BASE}/api/users`);
     const allUsers = await resp.json();
+    console.log(email);
     const userDB = allUsers.find((item) => email === item.user.email);
+    console.log("login account service:", userDB);
     return userDB;
   } catch (error) {
     throw Error(error);

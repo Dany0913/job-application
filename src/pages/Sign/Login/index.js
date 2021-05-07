@@ -1,13 +1,33 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLock } from "@fortawesome/fontawesome-free-solid";
 import { loginAccount } from "../../../services/auth.service";
 
 const Login = () => {
-  useEffect(() => {
-    loginAccount("dany0913@hotmail.com");
-  }, []);
+  const [registeredUser, setRegisteredUser] = useState({ email: "" });
+
+  const handleRegisteredUser = ({ target }) => {
+    const { name, value } = target;
+    setRegisteredUser({ ...registeredUser, [name]: value });
+  };
+  const handleLogin = async (evt) => {
+    evt.preventDefault();
+    try {
+      let userRegistered = await loginAccount(registeredUser.email);
+      console.log("Entró try", [userRegistered]);
+      if (userRegistered) {
+        localStorage.setItem(
+          "LOCAL_JOB_APP_USER",
+          JSON.stringify(userRegistered)
+        );
+      } else {
+        alert("Usuario no registrado");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <div className="login-page">
       <main>
@@ -15,7 +35,7 @@ const Login = () => {
           <img src="./img/logo.png" alt="Logo" />
           <h1>Log into your account</h1>
 
-          <form>
+          <form onSubmit={handleLogin}>
             <div className="form-group">
               <div className="input-group">
                 <span className="input-group-addon">
@@ -23,8 +43,10 @@ const Login = () => {
                 </span>
                 <input
                   type="email"
+                  name="email"
                   className="form-control"
                   placeholder="Email"
+                  onChange={handleRegisteredUser}
                 />
               </div>
             </div>

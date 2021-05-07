@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Navigation = () => {
   const logUser = localStorage.getItem("LOCAL_JOB_APP_USER");
   const user = logUser ? JSON.parse(logUser) : null;
-  console.log(user);
+  console.log("User in nav", user);
   const handleLogOut = () => {
     return localStorage.clear();
   };
