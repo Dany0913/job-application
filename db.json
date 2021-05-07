@@ -2,59 +2,19 @@
   "users": [
     {
       "user": {
-        "name": "Dani",
+        "name": "Daniela Calle",
         "email": "dany0913@hotmail.com",
-        "role": "Candidate"
+        "role": "Manager"
       },
       "id": 1
     },
     {
       "user": {
-        "name": "Dani",
-        "email": "dany0913@hotmail.com",
+        "name": "David Ramírez",
+        "email": "david.ramirez17@gmail.com",
         "role": "Candidate"
       },
       "id": 2
-    },
-    {
-      "user": {
-        "name": "Dani",
-        "email": "dany0913@hotmail.com",
-        "role": "Candidate"
-      },
-      "id": 3
-    },
-    {
-      "user": {
-        "name": "Dani",
-        "email": "danielac9413@gmail.com",
-        "role": "Manager"
-      },
-      "id": 4
-    },
-    {
-      "user": {
-        "name": "David Ramírez",
-        "email": "david.ramirez17@gmail.com",
-        "role": "Manager"
-      },
-      "id": 5
-    },
-    {
-      "user": {
-        "name": "David Ramírez",
-        "email": "david.ramirez17@gmail.com",
-        "role": "Manager"
-      },
-      "id": 6
-    },
-    {
-      "user": {
-        "name": "Dani",
-        "email": "dany0913@hotmail.com",
-        "role": "Manager"
-      },
-      "id": 7
     }
   ],
   "jobs": [
@@ -92,7 +52,14 @@
         "Knowledge of user interface design."
       ],
       "ago": "34 min ago",
-      "className": "label-success"
+      "className": "label-success",
+      "candidates": [
+        {
+          "name": "David Ramírez",
+          "email": "david.ramirez17@gmail.com",
+          "role": "Candidate"
+        }
+      ]
     },
     {
       "id": "1030",
@@ -128,7 +95,15 @@
         "Knowledge of user interface design."
       ],
       "ago": "8 hours ago",
-      "className": "label-warning"
+      "className": "label-warning",
+      "candidates": [
+        {
+          "name": "David Ramírez",
+          "email": "david.ramirez17@gmail.com",
+          "role": "Candidate",
+          "msj": "Aplicando al 1030"
+        }
+      ]
     },
     {
       "id": "1040",

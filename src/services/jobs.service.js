@@ -4,6 +4,8 @@ const getAllJobs = async () => {
   try {
     const resp = await fetch(`${API_URL_BASE}/api/jobs`);
     const jobs = await resp.json();
+    console.log(`Get all jobs function: ${jobs.join()}`);
+
     return jobs;
   } catch (error) {
     throw Error(error);
@@ -13,12 +15,14 @@ const getAllJobs = async () => {
 const getSingleJob = async (id) => {
   try {
     const resp = await fetch(`${API_URL_BASE}/api/jobs/${id}`);
-    const jobs = await resp.json();
-    return jobs;
+    const job = await resp.json();
+    console.log(`Get single job function: ${job}`);
+    return job;
   } catch (error) {
     throw Error(error);
   }
 };
+
 const createJob = async (job) => {
   try {
     return job;
@@ -27,4 +31,20 @@ const createJob = async (job) => {
   }
 };
 
-export { getAllJobs, getSingleJob, createJob };
+const addCandidateToJob = async (job) => {
+  try {
+    const payload = {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(job),
+    };
+    const resp = await fetch(`${API_URL_BASE}/api/jobs/${job.id}`, payload);
+    const updatedJob = await resp.json();
+    console.log(`Updated job: ${updatedJob}`);
+    return updatedJob;
+  } catch (error) {
+    throw Error(error);
+  }
+};
+
+export { getAllJobs, getSingleJob, createJob, addCandidateToJob };
